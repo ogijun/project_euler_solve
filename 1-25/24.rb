@@ -2,7 +2,7 @@ digits = (0..9).to_a.map(&:to_s)
 pos = 1_000_000 - 1
 
 def factorial n
-  n.downto(1).inject(1){ |r, i| r *= i }
+  n.downto(1).reduce(1){ |r, i| r *= i }
 end
 
 result = []

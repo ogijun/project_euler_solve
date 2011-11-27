@@ -20,4 +20,4 @@ until (p = next_p p + 2, primes) > 10
   primes.push p
 end
 
-p primes.inject(&:+) + 2
+p primes.reduce(&:+) + 2

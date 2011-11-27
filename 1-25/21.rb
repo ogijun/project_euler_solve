@@ -5,7 +5,7 @@ for i in 0..10000
     q, r = i.divmod j
     divs.push j, q if r == 0
   end
-  tab[i] = divs.inject(&:+)
+  tab[i] = divs.reduce(&:+)
 end
 
 a = 0

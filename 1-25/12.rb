@@ -32,7 +32,7 @@ def prime_factor n, primes
 end
 
 def num_of_divs n, primes
-  prime_factor(n, primes).values.map{|p| p + 1}.inject(&:*)
+  prime_factor(n, primes).values.map{|p| p + 1}.reduce(&:*)
 end
 
 primes = [2, 3]

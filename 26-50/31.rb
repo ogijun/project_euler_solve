@@ -1,7 +1,7 @@
 require 'pp'
 
 def calc uses, left_coins, patterns
-  total = uses.inject(0){ |r, i| r += i[0]*i[1] }
+  total = uses.reduce(0){ |r, i| r += i[0]*i[1] }
   if left_coins.length == 1
     patterns.push uses + [[1, 200 - total]]
   else

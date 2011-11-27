@@ -25,22 +25,22 @@ a = 0
 for i in 0...20*20
   # /
   if i%20 >= 4 && i/20 < 16
-    b = (0...4).inject(1){|n, k| n *= map[i + k*19]}
+    b = (0...4).reduce(1){|n, k| n *= map[i + k*19]}
     a = b if b > a
   end
   # -
   if i%20 < 16
-    b = (0...4).inject(1){|n, k| n *= map[i + k]}
+    b = (0...4).reduce(1){|n, k| n *= map[i + k]}
     a = b if b > a
   end
   # |
   if i/20 < 16
-    b = (0...4).inject(1){|n, k| n *= map[i + k*20]}
+    b = (0...4).reduce(1){|n, k| n *= map[i + k*20]}
     a = b if b > a
   end
   # \
   if i%20 < 16 && i/20 < 16
-    b = (0...4).inject(1){|n, k| n *= map[i + k*21]}
+    b = (0...4).reduce(1){|n, k| n *= map[i + k*21]}
     a = b if b > a
   end
 end
