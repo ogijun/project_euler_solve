@@ -1,3 +1,8 @@
+module Enumerable
+  def sum
+    self.reduce(0, &:+)
+  end
+end
 
 class Integer
   def palindromic base = 10
@@ -5,4 +10,4 @@ class Integer
   end
 end
 
-p 1.upto(10**6 - 1).reduce(0){ |r, i| r += i if i.palindromic(2) and i.palindromic(10) ; r }
+p (1..(10**6 - 1)).step(2).find_all{ |i| i.palindromic(2) and i.palindromic(10) }.sum
