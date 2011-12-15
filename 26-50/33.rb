@@ -1,5 +1,3 @@
-require 'rational'
-
 def check m, n
   return false if m < n || (n*m)%100 == 0 
   d = gcd m, n
